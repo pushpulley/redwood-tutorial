@@ -14,7 +14,11 @@ export const failure = () => {
 }
 
 export const success = () => {
-  return Success ? <Success {...standard()} /> : null
+  return Success ? (
+    <div className="m-8 mt-16">
+      <Success {...standard()} />
+    </div>
+  ) : null
 }
 
 export default { title: 'Cells/CommentsCell' }
