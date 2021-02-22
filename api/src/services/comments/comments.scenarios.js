@@ -1,15 +1,33 @@
 export const standard = defineScenario({
   comment: {
-    one: {
-      name: 'String',
-      body: 'String',
-      post: { create: { title: 'String', body: 'String' } },
+    jane: {
+      name: 'Jane Doe',
+      body: 'I like trees',
+      post: {
+        create: {
+          title: 'Redwood Leaves',
+          body: 'The quick brown fox jumped over the lazy dog.',
+        },
+      },
     },
+    john: {
+      name: 'John Doe',
+      body: 'Hug a tree today',
+      post: {
+        create: {
+          title: 'Root Systems',
+          body: 'The five boxing wizards jump quickly.',
+        },
+      },
+    },
+  },
+})
 
-    two: {
-      name: 'String',
-      body: 'String',
-      post: { create: { title: 'String', body: 'String' } },
+export const postOnly = defineScenario({
+  post: {
+    bark: {
+      title: 'Bark',
+      body: "A tree's bark is worse than its bite",
     },
   },
 })
