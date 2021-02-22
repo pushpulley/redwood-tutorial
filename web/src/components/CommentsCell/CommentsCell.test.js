@@ -26,9 +26,12 @@ describe('CommentsCell', () => {
   //
   //   expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
-  it('renders Success successfully', async () => {
-    expect(() => {
-      render(<Success comments={standard().comments} />)
-    }).not.toThrow()
+  test('Success renders successfully', async () => {
+
+    const comments = standard().comments
+    render(<Success comments={comments} />)
+    comments.forEach((comment) => {
+      expect(screen.getByText(comment.body)).toBeInTheDocument()
+    })
   })
 })
