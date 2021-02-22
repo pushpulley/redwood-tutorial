@@ -19,10 +19,10 @@ const CREATE = gql`
   }
 `
 
-const CommentForm = () => {
+const CommentForm = ({ postId }) => {
   const [createComment, { loading, error }] = useMutation(CREATE)
   const onSubmit = (input) => {
-    createComment({ variables: { input } })
+    createComment({ variables: { input: { postId, ...input } } })
   }
 
   return (
